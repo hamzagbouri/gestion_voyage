@@ -80,4 +80,14 @@ INSERT INTO activite (`titre`,`description`,`prix`,`date_debut`,`date_fin`,`plac
  -- modify on tbale
  UPDATE  client set `nom` = "Test" where id_client = 2;
  -- Afficher 
- Select     
+ Select * from activite
+  join reservation
+   on activite.id_activite = reservation.id_activite
+   join client 
+   on reservation.id_client = 2;
+
+Select * from activite 
+Inner Join reservation
+ on activite.id_activite = reservation.id_activite
+  Inner Join client
+   on reservation.id_client=2;
