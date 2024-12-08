@@ -97,7 +97,7 @@ if(!$allActivtites)
             <div>
                 <table class="w-full border rounded-lg" >
                     <tr class="bg-gray-200 border-b  items-center ">
-                    <td class="text-center w-10 "> <input type="checkbox" name="" id=""></td>
+                    <td class="text-center w-10 p-4"> <input type="checkbox" name="" id=""></td>
                       <td>&nbsp;Titre</td>
                       <td>&nbsp;Description</td>
                       <td>&nbsp;Price</td>
@@ -117,7 +117,7 @@ if(!$allActivtites)
                         $places_disponibles = htmlspecialchars($row['places_disponibles']);
 
                         echo " <tr>
-                        <td class='text-center w-10'> <input type='checkbox' name='' id='' ></td>
+                        <td class='text-center w-10 p-4'> <input type='checkbox' name='' id='' ></td>
                         <td>&nbsp;$titre</td>
                         <td>&nbsp;$description</td>
                         <td>&nbsp;$prix</td>
