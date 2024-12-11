@@ -1,5 +1,6 @@
 -- CREATION DE LA BASE DE DONNEE
 create database voyage;
+use voyage;
 -- CREATION DES TABLES;
 create table client ( 
     id_client INT(11) AUTO_INCREMENT,
