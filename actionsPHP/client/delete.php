@@ -9,6 +9,8 @@ if (isset($_GET['id']))
         if($resl->num_rows >0){
             $_SESSION['error'] = "Couldn't delete client, delete it's reservation first";
         } else {
+            $_SESSION['succe'] = "Client DELETED!";
+
             $connection->query("DELETE FROM `client` where `id_client` = $id");
 
         }

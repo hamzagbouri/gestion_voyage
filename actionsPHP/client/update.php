@@ -15,11 +15,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['edit-submit']))
         header("Location: /Gestion Voyage/components/clients.php");
     
     } else {
-    $resul = $connection->query("UPDATE `client` SET `nom`=$name,`date_naissance`=$dateNaissance,`adresse`=$adresse,`telephone`=$phone, `email`= $email WHERE `id_client` =$id");
-    var_dump($resul);
+        $resul = $connection->query("UPDATE `client` SET `nom`='$name', `date_naissance`='$dateNaissance', `adresse`='$adresse', `telephone`='$phone', `email`='$email' WHERE `id_client`=$id");
         if ($resul) {
             $_SESSION['succe'] = "Client Modified";
-            echo 'Client updated Seccusfully';
         } else {
             $_SESSION['error'] = "Couldn't Modifie Client";
 
@@ -27,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['edit-submit']))
         }
     
     $connection->close();
-    // header("Location: /Gestion Voyage/components/clients.php");
+    header("Location: /Gestion Voyage/components/clients.php");
 
     }
 }

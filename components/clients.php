@@ -64,18 +64,18 @@ if(!$allClietns)
                 <h1>
                     Clients
                 </h1>
-              <p class="text-[#ff0000] font-bold"><?php
+             <?php
             if (isset($_SESSION['error'])) {
                 set_time_limit(2);  
-                echo $_SESSION['error'];  
+                echo "<p class='text-[#ff0000] font-bold'>". $_SESSION['error']."</p>";  
                 unset($_SESSION['error']);  
             }
             if (isset($_SESSION['succe'])) {
               set_time_limit(2);  
-              echo $_SESSION['succe'];  
+              echo "<p class='text-[#00ff00] font-bold'>". $_SESSION['succe']."</p>";  
               unset($_SESSION['succe']);  
           }
-            ?></p>
+            ?>
                <div class="flex gap-4">
                     <button class="flex gap-2 items-center border px-4 py-2 rounded-lg text-[#0E2354] ">
                         <img src="/Gestion Voyage/img/Downlaod.svg" alt="">Export
@@ -122,7 +122,7 @@ if(!$allClietns)
                         $date_naissance = htmlspecialchars($row['date_naissance']);
 
 
-                        echo " <tr>
+                        echo " <tr class='hover:bg-gray-100'>
                         <td class='text-center w-10 p-4'> <input type='checkbox' name='' id='' ></td>
                         <td>&nbsp;$nom</td>
                         <td>&nbsp;$email</td>

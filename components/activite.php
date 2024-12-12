@@ -1,5 +1,6 @@
 <?php
 include("../database/db.php");
+session_start();
 $query  = "SELECT * from activite";
 $allActivtites = $connection-> query($query);
 if(!$allActivtites)
@@ -57,18 +58,23 @@ if(!$allActivtites)
 <body>
 <?php include('../components/header.php')?>
 <section class="p-4 w-full flex flex-col gap-8">
-        <?php
-            if (isset($_SESSION['error'])) {
-                set_time_limit(2);  
-                echo $_SESSION['error'];  
-                unset($_SESSION['error']);  
-            }
-            ?>
+    
             
             <div class="flex justify-between items-center px-8">
                 <h1>
                     Activities
                 </h1>
+                <?php
+            if (isset($_SESSION['error'])) {
+                echo "<p class='text-[#ff0000] font-bold'>". $_SESSION['error']."</p>";  
+                unset($_SESSION['error']);  
+            }
+            if (isset($_SESSION['succe'])) {
+              set_time_limit(2);  
+              echo "<p class='text-[#00ff00] font-bold'>". $_SESSION['succe']."</p>";  
+              unset($_SESSION['succe']);  
+          }
+            ?>
                <div class="flex gap-4">
                     <button class="flex gap-2 items-center border px-4 py-2 rounded-lg text-[#0E2354] ">
                         <img src="/Gestion Voyage/img/Downlaod.svg" alt="">Export
@@ -116,7 +122,7 @@ if(!$allActivtites)
                         $date_fin = htmlspecialchars($row['date_fin']);
                         $places_disponibles = htmlspecialchars($row['places_disponibles']);
 
-                        echo " <tr>
+                        echo " <tr class='hover:bg-gray-100'>
                         <td class='text-center w-10 p-4'> <input type='checkbox' name='' id='' ></td>
                         <td>&nbsp;$titre</td>
                         <td>&nbsp;$description</td>
@@ -128,7 +134,7 @@ if(!$allActivtites)
 
                     <td>
                         <div class='flex items-center gap-2 pl-2'>
-                        <a href='deleteStudent.php?id= ".$row['id_activite']."'><img class='h-4 w-4' src='/Gestion Voyage/img/delete.png' alt=''></a>
+                        <a href='../actionsPHP/activite/delete.php?id= ".$row['id_activite']."'><img class='h-4 w-4' src='/Gestion Voyage/img/delete.png' alt=''></a>
                         <button >
                           <img class='h-4 w-4' src='/Gestion Voyage/img/editinggh.png' alt='aa'>
                         </button>

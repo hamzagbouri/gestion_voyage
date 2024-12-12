@@ -19,7 +19,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])){
         echo "<script> alert('failed to add client') </script>";
         exit();
     }
-    echo "<script> alert('Client added!!') </script>";
+    $_SESSION['succe'] = "Client ADDED!";
+
     header("Location: /Gestion Voyage/components/clients.php");
 
 

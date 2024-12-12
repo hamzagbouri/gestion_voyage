@@ -9,7 +9,7 @@
                 <a href="/Gestion Voyage/index.php" class="flex gap-4 px-4 py-2 rounded-2xl"><img src="/Gestion Voyage/img/home.svg" alt=""> Dashboard </a>
             
                 <a href='/Gestion Voyage/components/clients.php' class='flex gap-4 px-4 py-2 rounded-2xl'><img src='/Gestion Voyage/img/3 User.svg' alt=''> Clients </a>
-                <a href='/Gestion Voyage/components/activite.php' class='flex gap-4 px-4 py-2 rounded-2xl'><img id='btn-icon' class='mt-1' src='/Gestion Voyage/img/3 User.svg' alt=''> Activities</a>
+                <a href='/Gestion Voyage/components/activite.php' class='flex gap-4 px-4 py-2 rounded-2xl'><img id='btn-icon' class='mt-1' src='/Gestion Voyage/img/act.svg' alt=''> Activities</a>
             
                
                 <a href="/Gestion Voyage/components/reservations.php" class="flex gap-4 px-4 py-2 rounded-2xl"><img src="/Gestion Voyage/img/Settings_Future.svg" alt=""> Reservations </a>

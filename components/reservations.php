@@ -1,5 +1,6 @@
 <?php
 include("../database/db.php");
+session_start();
 $query  = "SELECT * from reservation";
 $allReservations = $connection-> query($query);
 $allClients = $connection->query("SELECT * from `client`");
@@ -62,24 +63,30 @@ if(!$allReservations || !$allClients || !$allActicities)
 <body>
 <?php include('../components/header.php')?>
 <section class="p-4 w-full flex flex-col gap-8">
-        <?php
-            if (isset($_SESSION['error'])) {
-                set_time_limit(2);  
-                echo $_SESSION['error'];  
-                unset($_SESSION['error']);  
-            }
-            ?>
+  
             
             <div class="flex justify-between items-center px-8">
                 <h1>
-                    Clients
+                    Reservations
                 </h1>
+                <?php
+            if (isset($_SESSION['error'])) {
+                set_time_limit(2);  
+                echo "<p class='text-[#ff0000] font-bold'>". $_SESSION['error']."</p>";  
+                unset($_SESSION['error']);  
+            }
+            if (isset($_SESSION['succe'])) {
+              set_time_limit(2);  
+              echo "<p class='text-[#00ff00] font-bold'>". $_SESSION['succe']."</p>";  
+              unset($_SESSION['succe']);  
+          }
+            ?>
                <div class="flex gap-4">
                     <button class="flex gap-2 items-center border px-4 py-2 rounded-lg text-[#0E2354] ">
                         <img src="/Gestion Voyage/img/Downlaod.svg" alt="">Export
                     </button>
                     <button id="add-etd" onclick=" document.getElementById('modalAddReservation').style.display = 'flex'" class="flex gap-2 items-center bg-[#4790cd] px-4 py-2 rounded-lg text-white ">
-                        <img src="/Gestion Voyage/img/_Avatar add button.svg" alt="">New Client
+                        <img src="/Gestion Voyage/img/_Avatar add button.svg" alt="">New Reservation
                     </button>
                </div>
             </div>
@@ -102,7 +109,7 @@ if(!$allReservations || !$allClients || !$allActicities)
             <div>
                 <table class="w-full border rounded-lg" >
                     <tr class="bg-gray-200 border-b  items-center ">
-                    <td class="text-center w-10 "> <input type="checkbox" name="" id=""></td>
+                    <td class="text-center w-10 p-4 "> <input type="checkbox" name="" id=""></td>
                       <td>&nbsp;Client Name</td>
                       <td>&nbsp;Activity Title</td>
                       <td>&nbsp;Date Reservation</td>
@@ -115,7 +122,6 @@ if(!$allReservations || !$allClients || !$allActicities)
                         $id = htmlspecialchars($row2['id_reservation']);
                         $date_reservation = htmlspecialchars($row2['date_reservation']);
                         $status = htmlspecialchars($row2['status']);
-                       var_dump($row2['status']);
 
                         $getClientInfoQuery = "SELECT nom from client join reservation on client.id_client = reservation.id_client where id_reservation = $id;";
                         $resultGetClientInfoQuery = $connection->query($getClientInfoQuery);
@@ -126,8 +132,8 @@ if(!$allReservations || !$allClients || !$allActicities)
                         $rowTitle = $resultGetActiviteInfoQuery-> fetch_assoc();
                         $titleActivity = $rowTitle['titre'];                   
 
-                        echo " <tr>
-                        <td class='text-center w-10'> <input type='checkbox' name='' id='' ></td>
+                        echo " <tr class='hover:bg-gray-100'>
+                        <td class='text-center w-10 p-4 '> <input type='checkbox' name='' id='' ></td>
                         <td>&nbsp;$nomClient</td>
                         <td>&nbsp;$titleActivity</td>
                         <td>&nbsp;$date_reservation</td>
@@ -135,7 +141,7 @@ if(!$allReservations || !$allClients || !$allActicities)
 
                     <td>
                     <div class='flex items-center gap-2 pl-2'>
-                        <a href='deleteStudent.php?id= ".$row2['id_client']."'><img class='h-4 w-4' src='/Gestion Voyage/img/delete.png' alt=''></a>
+                        <a href='../actionsPHP/reservation/delete.php?id= ".$row2['id_reservation']."'><img class='h-4 w-4' src='/Gestion Voyage/img/delete.png' alt=''></a>
                         <button >
                             <img class='h-4 w-4' src='/Gestion Voyage/img/editinggh.png' alt='aa'>
                         </button>
