@@ -100,8 +100,8 @@ if(!$allClietns)
                     </div>
                </div>
             </div>
-            <div>
-                <table class="w-full border rounded-lg" >
+            <div class="w-[50%]">
+                <table class="md:w-full border rounded-lg" >
                     <tr class="bg-gray-200 border-b rounded-lg gap-8 items-center ">
                     <td class="text-center w-10 p-4 align-center "> <input type="checkbox" name="" id=""></td>
                       <td>&nbsp;Nom</td>

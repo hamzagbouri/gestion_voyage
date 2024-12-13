@@ -1,6 +1,6 @@
 
-<div class="flex min-h-screen h-full ">
-    <aside class="w-52 border-r min-h-full  flex flex-col items-center gap-16 ">
+<div class="flex min-h-screen h-full">
+    <aside class="w-52 border-r min-h-full   flex-col items-center gap-16 hidden md:flex">
         <div class="mt-16 drop-shadow-xl">
             <img src="/Gestion Voyage/img/travel.png" alt="">
         </div>
@@ -17,20 +17,20 @@
         </div>
     </aside>
     <div class="grow">
-        <header class=" h-20 border-b">
-            <nav class=" h-full flex justify-between mx-8 items-center">
-                <div class="flex gap-2">
+        <header class=" h-20 border-b w-full">
+            <nav class=" h-full flex md:justify-between mx-8 items-center">
+                <div class=" gap-2 hidden md:flex">
                     <img src="/Gestion Voyage/img/Search.svg" alt="">
-                    <input class="search outline-none border-none w-64 px-4 py-2 rounded-2xl" type="search" name="search-input" id="search-input" placeholder="Search anything here">
+                    <input class="search outline-none border-none w-64 px-4 py-2 rounded-2xl " type="search" name="search-input" id="search-input" placeholder="Search anything here">
                 </div>
-                <div class="flex w-72 justify-between  items-center ">
-                    <img class="cursor-pointer" src="/Gestion Voyage/img/settings.svg" alt="">
+                <div class="flex w-72 md:justify-between gap-4  items-center ">
+                    <img class="cursor-pointer hidden md:block " src="/Gestion Voyage/img/settings.svg" alt="">
                     <img class="cursor-pointer" src="/Gestion Voyage/img/Icon.svg" alt="">
                     <form action="" action="post">
                         <button><img src="/Gestion Voyage/img/logout.png" class="h-4 w-4" alt=""></button>
                     </form>
                     <div class="flex items-center gap-2 cursor-pointer">
-                        <div class=" cursor-pointer w-10 h-10 bg-black bg-cover rounded-full text-white relative ">
+                        <div class=" cursor-pointer w-10 h-10 bg-black bg-cover rounded-full text-white relative  ">
                         <div class="bg-[#228B22] h-3 w-3 rounded-full absolute bottom-0 right-0  "></div>
                         </div>
                        <p class="text-[#606060] font-bold">Hamza Gbouri </p>
