@@ -18,5 +18,9 @@ if (isset($_GET['id']))
         $_SESSION['error'] = "Couldn't delete reservation". $e -> getmessage();
     }
 }
+else {
+    header("Location: /Gestion Voyage/index.php");
+
+}
 
 ?>

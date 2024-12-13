@@ -14,12 +14,16 @@ if (isset($_GET['id']))
             $connection->query("DELETE FROM `client` where `id_client` = $id");
 
         }
-        header("Location: /Gestion Voyage/components/clients.php");
+        header("Location: /Gestion Voyage/index.php");
 
     }catch (Exception $e)
     {
         echo $e -> getmessage();
     }
+}
+else {
+    header("Location: /Gestion Voyage/index.php");
+
 }
 
 ?>

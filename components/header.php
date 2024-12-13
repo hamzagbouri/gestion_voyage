@@ -6,9 +6,9 @@
         </div>
         <div class="">
             <div class="grid gap-4 w-[100%]">
-                <a href="/Gestion Voyage/index.php" class="flex gap-4 px-4 py-2 rounded-2xl"><img src="/Gestion Voyage/img/home.svg" alt=""> Dashboard </a>
+                <!-- <a href="/Gestion Voyage/index.php" class="flex gap-4 px-4 py-2 rounded-2xl"><img src="/Gestion Voyage/img/home.svg" alt=""> Dashboard </a> -->
             
-                <a href='/Gestion Voyage/components/clients.php' class='flex gap-4 px-4 py-2 rounded-2xl'><img src='/Gestion Voyage/img/3 User.svg' alt=''> Clients </a>
+                <a href='/Gestion Voyage/index.php' class='flex gap-4 px-4 py-2 rounded-2xl'><img src='/Gestion Voyage/img/3 User.svg' alt=''> Clients </a>
                 <a href='/Gestion Voyage/components/activite.php' class='flex gap-4 px-4 py-2 rounded-2xl'><img id='btn-icon' class='mt-1' src='/Gestion Voyage/img/act.svg' alt=''> Activities</a>
             
                

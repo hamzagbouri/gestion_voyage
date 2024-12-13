@@ -12,7 +12,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['edit-submit']))
     $phone = trim($connection->real_escape_string($_POST['phone-input-edit']));
     if(empty($name) || empty($dateNaissance) || empty($adresse) || empty($phone) ){
         $_SESSION['error'] = "Fill All inputs";
-        header("Location: /Gestion Voyage/components/clients.php");
+        header("Location: /Gestion Voyage/index.php");
     
     } else {
         $resul = $connection->query("UPDATE `client` SET `nom`='$name', `date_naissance`='$dateNaissance', `adresse`='$adresse', `telephone`='$phone', `email`='$email' WHERE `id_client`=$id");
@@ -25,7 +25,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['edit-submit']))
         }
     
     $connection->close();
-    header("Location: /Gestion Voyage/components/clients.php");
+    header("Location: /Gestion Voyage/index.php");
 
     }
 }

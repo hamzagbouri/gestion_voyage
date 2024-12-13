@@ -21,5 +21,9 @@ if (isset($_GET['id']))
         echo $e -> getmessage();
     }
 }
+else {
+    header("Location: /Gestion Voyage/index.php");
+
+}
 
 ?>

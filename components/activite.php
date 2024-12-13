@@ -139,7 +139,8 @@ if(!$allActivtites)
                           <img class='h-4 w-4' src='/Gestion Voyage/img/editinggh.png' alt='aa'>
                         </button>
                         </div>
-                    </td> ";
+                    </td>
+                    </tr> ";
                    
                     }
                     

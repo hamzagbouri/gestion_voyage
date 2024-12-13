@@ -137,14 +137,23 @@ if(!$allReservations || !$allClients || !$allActicities)
                         <td>&nbsp;$nomClient</td>
                         <td>&nbsp;$titleActivity</td>
                         <td>&nbsp;$date_reservation</td>
-                        <td>&nbsp;$status</td>
+                        <td>
+                            <form action='../actionsPHP/reservation/updateStatus.php' method='POST'>
+                                <input type='hidden' name='id_reservation' value='$id'>
+                                <select name='status_reservation' onchange='this.form.submit()'>
+                                    <option value='En Attente' " . (($status == 'En Attente') ? 'selected' : '') . ">En Attente</option>
+                                    <option value='Confirmée' " . (($status == 'Confirmée') ? 'selected' : '') . ">Confirmée</option>
+                                    <option value='Annulée' " . (($status == 'Annulée') ? 'selected' : '') . ">Annulée</option>
+                                </select>
+                            </form>
+                        </td>
 
                     <td>
-                    <div class='flex items-center gap-2 pl-2'>
-                        <a href='../actionsPHP/reservation/delete.php?id= ".$row2['id_reservation']."'><img class='h-4 w-4' src='/Gestion Voyage/img/delete.png' alt=''></a>
-                        <button >
-                            <img class='h-4 w-4' src='/Gestion Voyage/img/editinggh.png' alt='aa'>
-                        </button>
+                        <div class='flex items-center gap-2 pl-2'>
+                            <a href='../actionsPHP/reservation/delete.php?id= ".$row2['id_reservation']."'><img class='h-4 w-4' src='/Gestion Voyage/img/delete.png' alt=''></a>
+                            <button >
+                                <img class='h-4 w-4' src='/Gestion Voyage/img/editinggh.png' alt='aa'>
+                            </button>
                         <div>
                     </td> ";
                    

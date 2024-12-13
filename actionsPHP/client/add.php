@@ -21,9 +21,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['submit'])){
     }
     $_SESSION['succe'] = "Client ADDED!";
 
-    header("Location: /Gestion Voyage/components/clients.php");
+    header("Location: /Gestion Voyage/index.php");
 
 
+
+}
+else {
+    header("Location: /Gestion Voyage/index.php");
 
 }
 ?>
